@@ -1,0 +1,106 @@
+2023-01-21T20:29:21.340Z error: [1020 AUTH_HELPER] Delete indecipherable certificate on C:\Users\majdoub\AppData\Roaming\zaap\certificate\.certif36a952aa791ad2a89545ec94a9ec29bf The "data" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received an instance of Promise {"code":"ERR_INVALID_ARG_TYPE"}
+2023-01-21T20:29:21.354Z error: [1020 AUTH_HELPER] Delete indecipherable certificate on C:\Users\majdoub\AppData\Roaming\zaap\certificate\.certif4afe1d4831c8732d292be4581f9b4eb2 The "data" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received an instance of Promise {"code":"ERR_INVALID_ARG_TYPE"}
+2023-01-21T20:29:21.367Z error: [1020 AUTH_HELPER] Delete indecipherable certificate on C:\Users\majdoub\AppData\Roaming\zaap\certificate\.certif6a4e9ab9b7301f7b90579e87d65bedea The "data" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received an instance of Promise {"code":"ERR_INVALID_ARG_TYPE"}
+2023-01-21T20:29:21.383Z error: [1020 AUTH_HELPER] Delete indecipherable certificate on C:\Users\majdoub\AppData\Roaming\zaap\certificate\.certif70730913b92619a12efa084f92428b42 The "data" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received an instance of Promise {"code":"ERR_INVALID_ARG_TYPE"}
+2023-01-21T20:29:21.399Z error: [1020 AUTH_HELPER] Delete indecipherable certificate on C:\Users\majdoub\AppData\Roaming\zaap\certificate\.certif7a9e9fa6ac249849db191e7b030c7282 The "data" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received an instance of Promise {"code":"ERR_INVALID_ARG_TYPE"}
+2023-01-21T20:29:21.416Z error: [1020 AUTH_HELPER] Delete indecipherable certificate on C:\Users\majdoub\AppData\Roaming\zaap\certificate\.certif9f7a9847b2291df255e6505cef6a3145 The "data" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received an instance of Promise {"code":"ERR_INVALID_ARG_TYPE"}
+2023-01-21T20:29:21.430Z error: [1020 AUTH_HELPER] Delete indecipherable certificate on C:\Users\majdoub\AppData\Roaming\zaap\certificate\.certifeb612f4407a3104cce51c1af00d503ee The "data" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received an instance of Promise {"code":"ERR_INVALID_ARG_TYPE"}
+2023-01-21T20:29:58.072Z error: [1020 AUTH_HELPER] TypeError [ERR_INVALID_ARG_TYPE]: The "data" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received an instance of Promise 
+2023-01-21T20:29:58.086Z error: [1020 AUTH_HELPER] TypeError [ERR_INVALID_ARG_TYPE]: The "data" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received an instance of Promise 
+2023-01-21T20:29:58.099Z error: [1020 AUTH_HELPER] TypeError [ERR_INVALID_ARG_TYPE]: The "data" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received an instance of Promise 
+2023-01-21T20:29:58.114Z error: [1020 AUTH_HELPER] TypeError [ERR_INVALID_ARG_TYPE]: The "data" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received an instance of Promise 
+2023-01-21T20:29:58.129Z error: [1020 AUTH_HELPER] TypeError [ERR_INVALID_ARG_TYPE]: The "data" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received an instance of Promise 
+2023-01-21T20:29:58.146Z error: [1020 AUTH_HELPER] TypeError [ERR_INVALID_ARG_TYPE]: The "data" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received an instance of Promise 
+2023-01-21T20:29:58.161Z error: [1020 AUTH_HELPER] TypeError [ERR_INVALID_ARG_TYPE]: The "data" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received an instance of Promise 
+2023-01-21T20:30:25.913Z error: [1020 AUTH_HELPER] TypeError [ERR_INVALID_ARG_TYPE]: The "data" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received an instance of Promise 
+2023-01-21T20:30:25.927Z error: [1020 AUTH_HELPER] TypeError [ERR_INVALID_ARG_TYPE]: The "data" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received an instance of Promise 
+2023-01-21T20:30:25.942Z error: [1020 AUTH_HELPER] TypeError [ERR_INVALID_ARG_TYPE]: The "data" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received an instance of Promise 
+2023-01-21T20:30:25.955Z error: [1020 AUTH_HELPER] TypeError [ERR_INVALID_ARG_TYPE]: The "data" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received an instance of Promise 
+2023-01-21T20:30:25.969Z error: [1020 AUTH_HELPER] TypeError [ERR_INVALID_ARG_TYPE]: The "data" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received an instance of Promise 
+2023-01-21T20:30:25.984Z error: [1020 AUTH_HELPER] TypeError [ERR_INVALID_ARG_TYPE]: The "data" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received an instance of Promise 
+2023-01-21T20:30:25.999Z error: [1020 AUTH_HELPER] TypeError [ERR_INVALID_ARG_TYPE]: The "data" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received an instance of Promise 
+2023-01-21T20:38:46.890Z error: [1020 AUTH_HELPER] ReferenceError: cert is not defined 
+2023-01-21T20:38:46.892Z error: [1020 AUTH_HELPER] ReferenceError: cert is not defined 
+2023-01-21T20:38:46.893Z error: [1020 AUTH_HELPER] ReferenceError: cert is not defined 
+2023-01-21T20:38:46.894Z error: [1020 AUTH_HELPER] ReferenceError: cert is not defined 
+2023-01-21T20:38:46.895Z error: [1020 AUTH_HELPER] ReferenceError: cert is not defined 
+2023-01-21T20:38:46.896Z error: [1020 AUTH_HELPER] ReferenceError: cert is not defined 
+2023-01-21T20:38:46.897Z error: [1020 AUTH_HELPER] ReferenceError: cert is not defined 
+2023-01-21T20:38:59.266Z error: [1020 AUTH_HELPER] Error: error:06065064:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt 
+2023-01-21T20:38:59.308Z error: [1020 AUTH_HELPER] Error: error:06065064:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt 
+2023-01-21T20:38:59.348Z error: [1020 AUTH_HELPER] Error: error:06065064:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt 
+2023-01-21T20:38:59.390Z error: [1020 AUTH_HELPER] Error: error:06065064:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt 
+2023-01-21T20:38:59.433Z error: [1020 AUTH_HELPER] Error: error:06065064:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt 
+2023-01-21T20:38:59.474Z error: [1020 AUTH_HELPER] Error: error:06065064:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt 
+2023-01-21T20:39:16.080Z error: [1020 AUTH_HELPER] Error: error:06065064:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt 
+2023-01-21T20:39:16.122Z error: [1020 AUTH_HELPER] Error: error:06065064:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt 
+2023-01-21T20:39:16.163Z error: [1020 AUTH_HELPER] Error: error:06065064:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt 
+2023-01-21T20:39:16.204Z error: [1020 AUTH_HELPER] Error: error:06065064:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt 
+2023-01-21T20:39:16.247Z error: [1020 AUTH_HELPER] Error: error:06065064:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt 
+2023-01-21T20:39:16.294Z error: [1020 AUTH_HELPER] Error: error:06065064:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt 
+2023-01-21T20:41:12.218Z error: [1020 AUTH_HELPER] Error: error:06065064:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt 
+2023-01-21T20:41:12.260Z error: [1020 AUTH_HELPER] Error: error:06065064:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt 
+2023-01-21T20:41:12.303Z error: [1020 AUTH_HELPER] Error: error:06065064:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt 
+2023-01-21T20:41:12.343Z error: [1020 AUTH_HELPER] Error: error:06065064:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt 
+2023-01-21T20:41:12.384Z error: [1020 AUTH_HELPER] Error: error:06065064:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt 
+2023-01-21T20:41:12.425Z error: [1020 AUTH_HELPER] Error: error:06065064:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt 
+2023-01-21T20:48:03.559Z error: [1020 AUTH_HELPER] TypeError: undefined is not a promise 
+2023-01-21T20:48:03.561Z error: [1020 AUTH_HELPER] TypeError: undefined is not a promise 
+2023-01-21T20:48:03.561Z error: [1020 AUTH_HELPER] TypeError: undefined is not a promise 
+2023-01-21T20:48:03.562Z error: [1020 AUTH_HELPER] TypeError: undefined is not a promise 
+2023-01-21T20:48:03.562Z error: [1020 AUTH_HELPER] TypeError: undefined is not a promise 
+2023-01-21T20:48:03.562Z error: [1020 AUTH_HELPER] TypeError: undefined is not a promise 
+2023-01-21T20:48:03.563Z error: [1020 AUTH_HELPER] TypeError: undefined is not a promise 
+2023-01-21T20:55:37.000Z error: [1020 AUTH_HELPER] ReferenceError: cert is not defined 
+2023-01-21T20:55:37.002Z error: [1020 AUTH_HELPER] ReferenceError: cert is not defined 
+2023-01-21T20:55:37.003Z error: [1020 AUTH_HELPER] ReferenceError: cert is not defined 
+2023-01-21T20:55:37.003Z error: [1020 AUTH_HELPER] ReferenceError: cert is not defined 
+2023-01-21T20:55:37.004Z error: [1020 AUTH_HELPER] ReferenceError: cert is not defined 
+2023-01-21T20:55:37.004Z error: [1020 AUTH_HELPER] ReferenceError: cert is not defined 
+2023-01-21T20:55:37.005Z error: [1020 AUTH_HELPER] ReferenceError: cert is not defined 
+2023-01-21T20:55:45.406Z error: [1020 AUTH_HELPER] Error: error:06065064:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt 
+2023-01-21T20:55:45.447Z error: [1020 AUTH_HELPER] Error: error:06065064:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt 
+2023-01-21T20:55:45.489Z error: [1020 AUTH_HELPER] Error: error:06065064:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt 
+2023-01-21T20:55:45.532Z error: [1020 AUTH_HELPER] Error: error:06065064:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt 
+2023-01-21T20:55:45.576Z error: [1020 AUTH_HELPER] Error: error:06065064:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt 
+2023-01-21T20:55:45.622Z error: [1020 AUTH_HELPER] Error: error:06065064:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt 
+2023-01-21T20:56:10.439Z error: [1020 AUTH_HELPER] Error: error:06065064:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt 
+2023-01-21T20:56:10.480Z error: [1020 AUTH_HELPER] Error: error:06065064:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt 
+2023-01-21T20:56:10.520Z error: [1020 AUTH_HELPER] Error: error:06065064:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt 
+2023-01-21T20:56:10.561Z error: [1020 AUTH_HELPER] Error: error:06065064:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt 
+2023-01-21T20:56:10.601Z error: [1020 AUTH_HELPER] Error: error:06065064:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt 
+2023-01-21T20:56:10.642Z error: [1020 AUTH_HELPER] Error: error:06065064:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt 
+2023-01-21T20:56:45.357Z error: [1020 AUTH_HELPER] Error: error:06065064:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt 
+2023-01-21T20:56:45.398Z error: [1020 AUTH_HELPER] Error: error:06065064:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt 
+2023-01-21T20:56:45.439Z error: [1020 AUTH_HELPER] Error: error:06065064:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt 
+2023-01-21T20:56:45.480Z error: [1020 AUTH_HELPER] Error: error:06065064:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt 
+2023-01-21T20:56:45.520Z error: [1020 AUTH_HELPER] Error: error:06065064:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt 
+2023-01-21T20:56:45.562Z error: [1020 AUTH_HELPER] Error: error:06065064:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt 
+2023-01-21T20:57:05.323Z error: [1020 AUTH_HELPER] Error: error:06065064:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt 
+2023-01-21T20:57:05.364Z error: [1020 AUTH_HELPER] Error: error:06065064:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt 
+2023-01-21T20:57:05.420Z error: [1020 AUTH_HELPER] Error: error:06065064:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt 
+2023-01-21T20:57:05.464Z error: [1020 AUTH_HELPER] Error: error:06065064:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt 
+2023-01-21T20:57:05.506Z error: [1020 AUTH_HELPER] Error: error:06065064:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt 
+2023-01-21T20:57:05.549Z error: [1020 AUTH_HELPER] Error: error:06065064:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt 
+2023-01-21T21:02:38.750Z info: [1010 AUTH_HELPER] Machine infos : x64win32db6280bff9ce3c402d265cc8abe36a37cca2a143404e1d5736caff8ddc7f63c8majdoub1032768 
+2023-01-21T21:03:01.356Z info: [1010 AUTH_HELPER] Machine infos : x64,win32,db6280bff9ce3c402d265cc8abe36a37cca2a143404e1d5736caff8ddc7f63c8,majdoub,10,32768 
+2023-01-21T21:05:46.366Z info: [1010 AUTH_HELPER] Machine infos : x64,win32,db6280bff9ce3c402d265cc8abe36a37cca2a143404e1d5736caff8ddc7f63c8,majdoub,10,32768 
+2023-01-21T21:05:46.411Z info: [1010 AUTH_HELPER] Machine infos : x64,win32,db6280bff9ce3c402d265cc8abe36a37cca2a143404e1d5736caff8ddc7f63c8,majdoub,10,32768 
+2023-01-21T21:05:46.453Z info: [1010 AUTH_HELPER] Machine infos : x64,win32,db6280bff9ce3c402d265cc8abe36a37cca2a143404e1d5736caff8ddc7f63c8,majdoub,10,32768 
+2023-01-21T21:05:46.494Z info: [1010 AUTH_HELPER] Machine infos : x64,win32,db6280bff9ce3c402d265cc8abe36a37cca2a143404e1d5736caff8ddc7f63c8,majdoub,10,32768 
+2023-01-21T21:05:46.534Z info: [1010 AUTH_HELPER] Machine infos : x64,win32,db6280bff9ce3c402d265cc8abe36a37cca2a143404e1d5736caff8ddc7f63c8,majdoub,10,32768 
+2023-01-21T21:05:46.577Z info: [1010 AUTH_HELPER] Machine infos : x64,win32,db6280bff9ce3c402d265cc8abe36a37cca2a143404e1d5736caff8ddc7f63c8,majdoub,10,32768 
+2023-01-21T21:05:46.619Z info: [1010 AUTH_HELPER] Machine infos : x64,win32,db6280bff9ce3c402d265cc8abe36a37cca2a143404e1d5736caff8ddc7f63c8,majdoub,10,32768 
+2023-01-21T21:06:55.160Z info: [1010 AUTH_HELPER] Machine infos : x64,win32,db6280bff9ce3c402d265cc8abe36a37cca2a143404e1d5736caff8ddc7f63c8,majdoub,10,32768 
+2023-01-21T21:07:36.976Z info: [1010 AUTH_HELPER] Machine infos : x64,win32,db6280bff9ce3c402d265cc8abe36a37cca2a143404e1d5736caff8ddc7f63c8,majdoub,10,32768 
+2023-01-21T21:11:14.321Z info: [1010 AUTH_HELPER] Machine infos : x64,win32,db6280bff9ce3c402d265cc8abe36a37cca2a143404e1d5736caff8ddc7f63c8,majdoub,10,32768 
+2023-01-21T21:12:48.969Z info: [1010 AUTH_HELPER] Machine infos : x64,win32,db6280bff9ce3c402d265cc8abe36a37cca2a143404e1d5736caff8ddc7f63c8,majdoub,10,32768 
+2023-01-21T21:14:37.573Z info: [1010 AUTH_HELPER] Machine infos : x64,win32,db6280bff9ce3c402d265cc8abe36a37cca2a143404e1d5736caff8ddc7f63c8,majdoub,10,32768 
+2023-01-21T21:20:34.914Z info: [1010 AUTH_HELPER] Machine infos : x64,win32,db6280bff9ce3c402d265cc8abe36a37cca2a143404e1d5736caff8ddc7f63c8,majdoub,10,32768 
+2023-01-21T21:24:29.163Z info: [1010 AUTH_HELPER] Machine infos : x64,win32,db6280bff9ce3c402d265cc8abe36a37cca2a143404e1d5736caff8ddc7f63c8,majdoub,10,32768 
+2023-01-21T21:33:44.782Z info: [1010 AUTH_HELPER] Machine infos : x64,win32,db6280bff9ce3c402d265cc8abe36a37cca2a143404e1d5736caff8ddc7f63c8,majdoub,10,32768 
+2023-01-21T21:34:15.458Z info: [1010 AUTH_HELPER] Machine infos : x64,win32,db6280bff9ce3c402d265cc8abe36a37cca2a143404e1d5736caff8ddc7f63c8,majdoub,10,32768 
+2023-01-21T21:50:44.944Z info: [1010 AUTH_HELPER] Machine infos : x64,win32,db6280bff9ce3c402d265cc8abe36a37cca2a143404e1d5736caff8ddc7f63c8,majdoub,10,32768 
+2023-01-21T22:03:12.681Z info: [1010 AUTH_HELPER] Machine infos : x64,win32,6e83753a823ed1653a22ea15b6f7c3e1508ba931ee89e524087032bf77b90971,tarik,10,8192 
+2023-03-05T13:52:15.584Z info: [1010 AUTH_HELPER] Machine infos : x64,win32,1625634f7e78ad65da07150e0d3f406a122b5d4165190790f7aeaf19b86896bb,majdo,10,8192 
+2023-03-19T05:27:20.201Z info: [1010 AUTH_HELPER] Machine infos : x64,win32,db6280bff9ce3c402d265cc8abe36a37cca2a143404e1d5736caff8ddc7f63c8,majdoub,10,32768 

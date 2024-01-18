@@ -6,7 +6,7 @@ npm install
 ```
 ### launch 
 ```node getAllStoredCertifs.js```
-This will genrate two file containing all your accounts apikeys and certifs
+This will generate two files containing all your accounts apikeys and certifs
 
 
 ## Python version 
@@ -18,8 +18,8 @@ pip install -r requitement.txt
 
 ### launch to export all
 ```python exportAll.py```
-This will genrate two file containing all your accounts apikeys and certifs
+This will generate two files containing all your accounts apikeys and certifs
 
 # For pyd2bot users
 ```python exportAccountsToPyd2bot.py```
-will export all you accounts data to pyd2bot persistence file accounts.json so you can cuse them with AccountsManager
+will export all you accounts data to pyd2bot persistence file accounts.json so you can use them with AccountsManager

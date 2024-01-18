@@ -25,4 +25,3 @@ for apikey_details in apikeys:
         print(f"Failed to get login token for reason: {e.body}")
     except D2BotError as e:
         print(f"Failed to fetch characters from game server:\n{e.message}")
-    print(account_data)

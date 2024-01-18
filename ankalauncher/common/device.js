@@ -14,13 +14,12 @@ export default class Device {
         } [osPlatform]
     }
     
-    static async getUUID() {
+    static getUUID() {
         if (__uiid)
             return Promise.resolve(__uiid);
-        return Device.machineId().then((id) => {
-            __uiid = [os.platform(), os.arch(), id, os.cpus().length, os.cpus()[0].model].join();
-            return __uiid;
-        });
+        let machinId = this.machineIdSync();
+        __uiid = [os.platform(), os.arch(), machinId, os.cpus().length, os.cpus()[0].model].join();
+        return __uiid;
     }
 
     static getComputerRam() {

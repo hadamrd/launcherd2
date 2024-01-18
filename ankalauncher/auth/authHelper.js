@@ -1,11 +1,11 @@
-import path from 'path';
 import fs from 'fs';
 import os from 'os';
-import Haapi from './haapi.js';
-import CryptoHelper from './cryptoHelper.js';
-import logger from '../common/logger.js';
+import path from 'path';
 import Device from '../common/device.js';
+import logger from '../common/logger.js';
 import ZAAP_CONFIG from '../common/zaapConfig.js';
+import CryptoHelper from './cryptoHelper.js';
+import Haapi from './haapi.js';
 
 
 export default class AuthHelper {
@@ -50,7 +50,10 @@ export default class AuthHelper {
             certFolder = this.getCertificateFolderPath();
         const certFiles = fs.readdirSync(certFolder);
         const decipheredCerts = [];
-        const {hm1, hm2} = this.createHmEncoder();
+        const {
+            hm1,
+            hm2
+        } = this.createHmEncoder();
         let cert, hash;
         for (let i = 0; i < certFiles.length; i++) {
             const certFile = certFiles[i];
@@ -60,7 +63,12 @@ export default class AuthHelper {
                 try {
                     cert = await CryptoHelper.decryptFromFileWithUUID(certPath);
                     hash = this.generateHashFromCertif(cert, hm1, hm2);
-                    decipheredCerts.push({hash, certFile, cert})
+                    console.log(`hash ${hash}`)
+                    decipheredCerts.push({
+                        hash,
+                        certFile,
+                        cert
+                    })
                 } catch (e) {
                     console.log(`[1020 AUTH_HELPER] ${e}`);
                 }
@@ -80,7 +88,10 @@ export default class AuthHelper {
             try {
                 const apikeyPath = path.join(apikeysFolder, apikeyFile);
                 const apikey = await CryptoHelper.decryptFromFileWithUUID(apikeyPath);
-                decipheredApiKeys.push({apikeyFile, apikey})
+                decipheredApiKeys.push({
+                    apikeyFile,
+                    apikey
+                })
             } catch (e) {
                 console.log(`[1020 AUTH_HELPER] ${e}`);
             }
@@ -120,7 +131,7 @@ export default class AuthHelper {
         else Haapi.refreshApikey(apiKey).then(({
             refreshToken: refreshToken
         }) => {
-            if(!apiKey) {
+            if (!apiKey) {
                 logger.error("apiKey not found while refreshing it")
             } else {
                 apiKey.refreshToken = refreshToken
@@ -133,7 +144,10 @@ export default class AuthHelper {
 
     static generateHashFromCertif(cert, hm1, hm2) {
         if (!hm1 || !hm2)
-            ({hm1, hm2} = this.createHmEncoder());
+            ({
+                hm1,
+                hm2
+            } = this.createHmEncoder());
         return CryptoHelper.generateHashFromCertif(cert, hm1, hm2)
     }
 
@@ -146,31 +160,30 @@ export default class AuthHelper {
     }
 
     static createHmEncoder() {
-        let data = [];
-        data.push(os.arch());
-        data.push(os.platform());
-        data.push(Device.machineIdSync());
-        data.push(os.userInfo().username);
-        data.push(Device.getOsVersion());
-        data.push(Device.getComputerRam());
+        let data = [os.arch(), os.platform(), Device.machineIdSync(), os.userInfo().username, Device.getOsVersion(), Device.getComputerRam()];
+        console.log("machine infos", data);
         let machineInfos = data.join("");
         logger.info(`[1010 AUTH_HELPER] Machine infos : ${data}`)
         const hm1 = CryptoHelper.createHashFromStringSha256(machineInfos);
         const hm2 = hm1.split("").reverse().join("");
-        return {hm1, hm2}
+        console.log("hm1", hm1, "hm2", hm2);
+        return {
+            hm1,
+            hm2
+        }
     }
 
     static async storeCertificate(certificate) {
-        if (!certificate.login) 
+        if (!certificate.login)
             return;
-        let loginHash = CryptoHelper.createHashFromStringSha256(certificate.login)    
+        let loginHash = CryptoHelper.createHashFromStringSha256(certificate.login)
         const certificat_path = path.join(this.getCertificateFolderPath(), `.certif${loginHash}`);
         return CryptoHelper.encryptToFileWithUUID(certificat_path, certificate).catch((e) => {
             throw new Error("Unable to store Certificate : " + e.message)
         })
     }
-    
-    static async sendDeviceInfos(apikey, skipError=false) {
+
+    static async sendDeviceInfos(apikey, skipError = false) {
         let account;
         try {
             account = await Haapi.signOnWithApikey(ZAAP_CONFIG.ZAAP_GAME_ID, apikey);

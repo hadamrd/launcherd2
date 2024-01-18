@@ -29,8 +29,11 @@ export default class CryptoHelper {
 
     static generateHashFromCertif(cert, hm1, hm2) {
         let cipher = nodecrypto.createDecipheriv("aes-256-ecb", hm2, "");
-        let s = Buffer.concat([cipher.update(cert.encodedCertificate, "base64"), cipher.final()]);
-        return nodecrypto.createHash("sha256").update(hm1 + s.toString()).digest("hex");
+        let decrypted_cert_bytes = cipher.update(cert.encodedCertificate, "base64")
+        let decrypted_certificate = Buffer.concat([decrypted_cert_bytes, cipher.final()]);
+        console.log("decrypted_certificate", decrypted_certificate.toString());
+        let hash_input = hm1 + decrypted_certificate.toString();
+        return nodecrypto.createHash("sha256").update(hash_input).digest("hex");
     }
 
     static encryptToFile(filePath, jsonObj, uuid) {

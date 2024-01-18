@@ -1,13 +1,8 @@
+from ankalauncher.pythonversion.CryptoHelper import CryptoHelper
 from pyd2bot.logic.managers.AccountManager import AccountManager
-import json
-apikeys_file = "apikeys.json"
-certs_file = "certs.json"
 
-with open(apikeys_file) as f:
-    apikeys = json.load(f)
-
-with open(certs_file) as f:
-    certs = json.load(f)
+apikeys = CryptoHelper.get_all_stored_apikeys()
+certs = CryptoHelper.get_all_stored_certificates()
 
 discovered_accounts = []
 for apikey_details in apikeys:
@@ -22,6 +17,9 @@ for apikey_details in apikeys:
             if certdata['id'] == certid:
                 certhash = cert['hash']
                 break
-    
-    account_data = AccountManager.fetch_account(1, apikey, certid, certhash)
+    try:
+        account_data = AccountManager.fetch_account(1, apikey, certid, certhash)
+    except Exception as e:
+        print(f"Failed to fetch account for reason: {e}")
+        continue
     print(account_data)

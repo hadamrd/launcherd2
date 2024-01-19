@@ -1,13 +1,15 @@
-import json
+import base64
+import getpass
 import hashlib
+import json
 import os
 from pathlib import Path
-from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
-from cryptography.hazmat.backends import default_backend
-import base64
-from cryptography.hazmat.primitives import padding
-import getpass
+
 from ankalauncher.pythonversion.Device import Device
+from cryptography.hazmat.backends import default_backend
+from cryptography.hazmat.primitives import padding
+from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
+
 
 class CryptoHelper:
 
@@ -24,7 +26,7 @@ class CryptoHelper:
         return os.path.join(CryptoHelper.getZaapPath(), "keydata")
     
     @staticmethod
-    def create_hash_from_string(string):
+    def create_hash_from_string_md5(string):
         return hashlib.md5(string.encode()).digest()
 
     @staticmethod
@@ -33,18 +35,19 @@ class CryptoHelper:
 
     @staticmethod
     def encrypt(json_obj, uuid):
-        key = CryptoHelper.create_hash_from_string(uuid)
+        key = CryptoHelper.create_hash_from_string_md5(uuid)
         iv = os.urandom(16)
         cipher = Cipher(algorithms.AES(key), modes.CBC(iv), backend=default_backend())
         encryptor = cipher.encryptor()
-        json_str = json.dumps(json_obj).encode('utf-8')
-        encrypted_data = encryptor.update(json_str) + encryptor.finalize()
+        json_bytes = json.dumps(json_obj).encode('utf-8')
+        encrypted_data = encryptor.update(json_bytes) + encryptor.finalize()
         return iv.hex() + "|" + encrypted_data.hex()
 
     @staticmethod
     def generate_hash_from_cert(cert, hm1, hm2):
         # Extract the encoded certificate from the cert dict
         encoded_certificate = cert.get('encodedCertificate', '')
+        
         # Convert hm2 to bytes and use as key for decryption
         key = hm2.encode()
         
@@ -52,10 +55,12 @@ class CryptoHelper:
         cipher = Cipher(algorithms.AES(key), modes.ECB(), backend=default_backend())
         decryptor = cipher.decryptor()
 
-        # Decrypt the encoded certificate
-        decoded_certificate_bytes = decryptor.update(base64.b64decode(encoded_certificate))
+        # Decrypt the abse 64 encoded certificate
+        base64_encoded_certificate = base64.b64decode(encoded_certificate)
+        decoded_certificate_bytes = decryptor.update(base64_encoded_certificate)
         decrypted_certificate = decoded_certificate_bytes + decryptor.finalize()
         
+        # Unpad the decrypted certificate
         unpadder = padding.PKCS7(algorithms.AES.block_size).unpadder()
         decrypted_certificate = unpadder.update(decrypted_certificate) + unpadder.finalize()
         
@@ -82,7 +87,7 @@ class CryptoHelper:
         iv, data_to_decrypt = data.split("|")
         iv = bytes.fromhex(iv)
         data_to_decrypt = bytes.fromhex(data_to_decrypt)
-        key = CryptoHelper.create_hash_from_string(uuid)
+        key = CryptoHelper.create_hash_from_string_md5(uuid)
         cipher = Cipher(algorithms.AES(key), modes.CBC(iv), backend=default_backend())
         decryptor = cipher.decryptor()
         decrypted_data = decryptor.update(data_to_decrypt) + decryptor.finalize()
@@ -103,14 +108,6 @@ class CryptoHelper:
             return 0
 
     @staticmethod
-    def get_file_hash_sync(file_path):
-        sha1_hasher = hashlib.sha1()
-        with open(file_path, 'rb') as file:
-            sha1_hasher.update(file.read())
-        return sha1_hasher.hexdigest()
-
-
-    @staticmethod
     def get_all_stored_certificates(cert_folder=None):
         if not cert_folder:
             cert_folder = CryptoHelper.get_certificate_folder_path()
@@ -118,12 +115,13 @@ class CryptoHelper:
         deciphered_certs = []
         encoders = CryptoHelper.create_hm_encoder()
         for cert_file in cert_files:
-            if cert_file.startswith(".certif"):
-                cert_path = Path(cert_folder) / cert_file
-                print(f"processing file {cert_path}")
-                cert = CryptoHelper.decrypt_from_file(str(cert_path))
-                hash = CryptoHelper.generate_hash_from_cert(cert, encoders["hm1"], encoders["hm2"])
-                deciphered_certs.append({"hash": hash, "certFile": cert_file, "cert": cert})
+            if not cert_file.startswith(".certif"):
+                continue
+            cert_path = Path(cert_folder) / cert_file
+            print(f"processing file {cert_path}")
+            cert = CryptoHelper.decrypt_from_file(str(cert_path))
+            hash = CryptoHelper.generate_hash_from_cert(cert, encoders["hm1"], encoders["hm2"])
+            deciphered_certs.append({"hash": hash, "certFile": cert_file, "cert": cert})
         return deciphered_certs
     
     @staticmethod
@@ -133,6 +131,8 @@ class CryptoHelper:
         apikeys_files = os.listdir(apikeys_folder)
         deciphered_apikeys = []
         for apikey_file in apikeys_files:
+            if not apikey_file.startswith(".kay"):
+                continue
             apikey_files_path = Path(apikeys_folder) / apikey_file
             print(f"processing file {apikey_files_path}")
             apikey_data = CryptoHelper.decrypt_from_file(str(apikey_files_path))
@@ -155,3 +155,4 @@ class CryptoHelper:
 
 if __name__ == "__main__":
     CryptoHelper.get_all_stored_certificates()
+    CryptoHelper.get_all_stored_apikeys()

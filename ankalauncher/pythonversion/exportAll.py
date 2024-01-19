@@ -2,8 +2,6 @@ import json
 
 from ankalauncher.pythonversion.CryptoHelper import CryptoHelper
 
-from pyd2bot.logic.managers.AccountManager import AccountManager
-
 apikeys = CryptoHelper.get_all_stored_apikeys()
 certs = CryptoHelper.get_all_stored_certificates()
 

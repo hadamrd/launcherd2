@@ -78,6 +78,7 @@ class CryptoHelper:
     def decrypt_from_file(file_path, uuid=None):
         if uuid is None:
             uuid = Device.get_uuid()
+        print(f"Decrypting file {file_path} with uuid {uuid}")
         with open(file_path, 'r', encoding='utf-8') as file:
             data = file.read()
         return CryptoHelper.decrypt(data, uuid)
@@ -131,11 +132,12 @@ class CryptoHelper:
         apikeys_files = os.listdir(apikeys_folder)
         deciphered_apikeys = []
         for apikey_file in apikeys_files:
-            if not apikey_file.startswith(".kay"):
+            if not apikey_file.startswith(".key"):
                 continue
             apikey_files_path = Path(apikeys_folder) / apikey_file
             print(f"processing file {apikey_files_path}")
             apikey_data = CryptoHelper.decrypt_from_file(str(apikey_files_path))
+            print(f"Apikey data : {apikey_data}")
             deciphered_apikeys.append({"apikeyFile": apikey_file, "apikey": apikey_data})
         return deciphered_apikeys
     

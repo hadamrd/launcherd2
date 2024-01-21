@@ -5,6 +5,7 @@ import hashlib
 import os
 import re
 import psutil
+import wmi
 
 class Device:
     __uuid = None
@@ -24,7 +25,9 @@ class Device:
             return Device.__uuid
 
         id = Device.machine_id()
+        print(f"Machine id : {id}")
         cpu_count, cpu_model = Device.get_cpu_info()
+        print(f"cpu_count : {cpu_count}, cpu_model : {cpu_model}")
         plt, arch = Device.get_platform_and_architecture()
         Device.__uuid = ",".join([plt, arch, id, str(cpu_count), cpu_model])
         return Device.__uuid
@@ -54,14 +57,17 @@ class Device:
     def get_cpu_info():
         cpu_count = psutil.cpu_count(logical=True)  # Number of physical cores
         cpu_model = None
-
+        
         # For Windows
         if psutil.WINDOWS:
-            import wmi
-            w = wmi.WMI()
+            try:
+                w = wmi.WMI()
+            except Exception as e:
+                print(f"Error while getting wmi : {e}")
             cpu_info = w.Win32_Processor()[0]
             cpu_model = cpu_info.Name
-
+            print(f"cpu_model : {cpu_model}")
+            
         # For Unix/Linux
         elif psutil.LINUX or psutil.MACOS or psutil.UNIX:
             with open("/proc/cpuinfo", "r") as f:
@@ -117,17 +123,37 @@ class Device:
             return re.search("REG_SZ\s+(.*?)\s*$", std_out, re.IGNORECASE).group(1).lower()
         else:
             raise Exception("Unsupported platform: " + plt)
+
+    def get_machine_guid_windows():
+        import winreg
+        # Define the registry path and key
+        registry_path = r"SOFTWARE\Microsoft\Cryptography"
+        key_name = "MachineGuid"
+        try:
+            # Connect to the registry
+            with winreg.ConnectRegistry(None, winreg.HKEY_LOCAL_MACHINE) as hkey:
+                # Open the key
+                with winreg.OpenKey(hkey, registry_path) as reg_key:
+                    # Read the value
+                    value, _ = winreg.QueryValueEx(reg_key, key_name)
+                    return value
+        except Exception as e:
+            print(f"An error occurred: {e}")
+            return None
         
     @staticmethod
     def machine_id(with_sha256_hash=True):
-        cmd = Device.get_uuid_cmd_per_platform()
         try:
-            output = subprocess.check_output(cmd, shell=True, text=True)
-            machine_uuid = Device.parse_machine_guuid(output)
+            plt = platform.system().lower()
+            if plt == "windows":
+                machine_uuid = Device.get_machine_guid_windows()
+            else:
+                cmd = Device.get_uuid_cmd_per_platform()
+                output = subprocess.check_output(cmd, shell=True, text=True)
+                machine_uuid = Device.parse_machine_guuid(output)
             return Device.hash_with_sha256(machine_uuid) if with_sha256_hash else machine_uuid
         except subprocess.CalledProcessError as e:
             raise Exception("Error while obtaining machine id: " + str(e))
-
 
 
 if __name__ == "__main__":

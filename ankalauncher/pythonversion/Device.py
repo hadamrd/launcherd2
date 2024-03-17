@@ -1,11 +1,13 @@
-import math
-import platform
-import subprocess
 import hashlib
+import math
 import os
+import platform
 import re
+import subprocess
+
 import psutil
-import wmi
+import pythoncom  # Ensure pythoncom is imported
+
 
 class Device:
     __uuid = None
@@ -61,6 +63,8 @@ class Device:
         # For Windows
         if psutil.WINDOWS:
             try:
+                pythoncom.CoInitialize()
+                import wmi
                 w = wmi.WMI()
             except Exception as e:
                 print(f"Error while getting wmi : {e}")
@@ -126,6 +130,7 @@ class Device:
 
     def get_machine_guid_windows():
         import winreg
+
         # Define the registry path and key
         registry_path = r"SOFTWARE\Microsoft\Cryptography"
         key_name = "MachineGuid"
@@ -154,8 +159,3 @@ class Device:
             return Device.hash_with_sha256(machine_uuid) if with_sha256_hash else machine_uuid
         except subprocess.CalledProcessError as e:
             raise Exception("Error while obtaining machine id: " + str(e))
-
-
-if __name__ == "__main__":
-    machine_id = Device.get_uuid()
-    print(machine_id)

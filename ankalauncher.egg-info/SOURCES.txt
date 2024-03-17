@@ -1,0 +1,7 @@
+README.md
+setup.py
+ankalauncher.egg-info/PKG-INFO
+ankalauncher.egg-info/SOURCES.txt
+ankalauncher.egg-info/dependency_links.txt
+ankalauncher.egg-info/requires.txt
+ankalauncher.egg-info/top_level.txt

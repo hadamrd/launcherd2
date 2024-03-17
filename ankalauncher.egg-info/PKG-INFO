@@ -1,0 +1,40 @@
+Metadata-Version: 2.1
+Name: ankalauncher
+Version: 1.0.0
+Summary: Launcher reproduction to fetch launcher accounts.
+Home-page: https://github.com/hadamrd/launcherd2
+Author: majdoub khalid
+Author-email: majdoub.khalid@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.9
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: Windows
+Requires-Python: >=3.9,<3.10
+
+# Setup:
+## js version
+```bash
+cd ankalauncher
+npm install
+```
+### launch 
+```node getAllStoredCertifs.js```
+This will generate two files containing all your accounts apikeys and certifs
+
+
+## Python version 
+```bash
+cd ankalauncher
+cd pythonversion
+pip install -r requitement.txt
+```
+
+### launch to export all
+```python exportAll.py```
+This will generate two files containing all your accounts apikeys and certifs
+
+# For pyd2bot users
+```python exportAccountsToPyd2bot.py```
+will export all you accounts data to pyd2bot persistence file accounts.json so you can use them with AccountsManager
+

@@ -1,4 +1,5 @@
 from ankalauncher.pythonversion.CryptoHelper import CryptoHelper
+
 from pyd2bot.logic.managers.AccountManager import AccountManager
 from pyd2bot.thriftServer.pyd2botService.ttypes import D2BotError
 from pydofus2.com.ankamagames.atouin.BrowserRequests import HttpError

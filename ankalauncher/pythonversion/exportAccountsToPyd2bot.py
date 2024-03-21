@@ -2,7 +2,6 @@ from ankalauncher.pythonversion.CryptoHelper import CryptoHelper
 
 from pyd2bot.logic.managers.AccountManager import AccountManager
 from pyd2bot.thriftServer.pyd2botService.ttypes import D2BotError
-from pydofus2.com.ankamagames.atouin.BrowserRequests import HttpError
 
 apikeys = CryptoHelper.get_all_stored_apikeys()
 certs = CryptoHelper.get_all_stored_certificates()
@@ -22,7 +21,5 @@ for apikey_details in apikeys:
                 break
     try:
         account_data = AccountManager.fetch_account(1, apikey, certid, certhash)
-    except HttpError as e:
-        print(f"Failed to get login token for reason: {e.body}")
     except D2BotError as e:
         print(f"Failed to fetch characters from game server:\n{e.message}")

@@ -1,7 +1,5 @@
 from ankalauncher.pythonversion.CryptoHelper import CryptoHelper
-
 from pyd2bot.logic.managers.AccountManager import AccountManager
-from pyd2bot.thriftServer.pyd2botService.ttypes import D2BotError
 
 apikeys = CryptoHelper.get_all_stored_apikeys()
 certs = CryptoHelper.get_all_stored_certificates()
@@ -21,5 +19,5 @@ for apikey_details in apikeys:
                 break
     try:
         account_data = AccountManager.fetch_account(1, apikey, certid, certhash)
-    except D2BotError as e:
+    except Exception as exc:
         print(f"Failed to fetch characters from game server:\n{e.message}")
